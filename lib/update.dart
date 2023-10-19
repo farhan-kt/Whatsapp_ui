@@ -8,67 +8,96 @@ class ScreenUpdate extends StatefulWidget {
 }
 
 class _ScreenUpdateState extends State<ScreenUpdate> {
+  String title = 'update page';
+  String opt1 = 'Settings';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          elevation: 0,
-          backgroundColor: Color.fromARGB(255, 5, 156, 113),
-          title: Text("Update"),
-          actions: [
-            IconButton(onPressed: () {}, icon: Icon(Icons.camera_alt_outlined)),
-            IconButton(onPressed: () {}, icon: Icon(Icons.more_vert)),
-          ],
-        ),
+            elevation: 0,
+            backgroundColor: Color.fromARGB(255, 5, 156, 113),
+            title: Text("Update"),
+            actions: [
+              IconButton(
+                  onPressed: () {}, icon: Icon(Icons.camera_alt_outlined)),
+              PopupMenuButton(
+                itemBuilder: (context) => [
+                  PopupMenuItem(
+                    child: Text(opt1),
+                    value: opt1,
+                  ),
+                ],
+                onSelected: (String newValue) {
+                  setState(() {
+                    title = newValue;
+                  });
+                },
+              ),
+            ]),
         body: SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(children: [
             CircleAvatar(
-              backgroundColor: Color.fromARGB(255, 55, 226, 8),
-              radius: 50,
+              backgroundColor: Color.fromARGB(255, 5, 156, 113),
+              radius: 45,
               child: CircleAvatar(
                 radius: 40,
-                backgroundImage: AssetImage('assets/whatsapp.png'),
+                backgroundImage: AssetImage('assets/avatar.jpg'),
               ),
             ),
-            CircleAvatar(
-              backgroundColor: Color.fromARGB(255, 147, 16, 180),
-              radius: 50,
-              child: CircleAvatar(
-                radius: 40,
-                backgroundImage: AssetImage('assets/whatsapp.png'),
-              ),
+            SizedBox(
+              width: 5,
             ),
             CircleAvatar(
-              backgroundColor: Color.fromARGB(255, 173, 218, 10),
-              radius: 50,
+              backgroundColor: Color.fromARGB(255, 5, 156, 113),
+              radius: 45,
               child: CircleAvatar(
                 radius: 40,
-                backgroundImage: AssetImage('assets/whatsapp.png'),
+                backgroundImage: AssetImage('assets/squrrel.jpg'),
               ),
             ),
-            CircleAvatar(
-              backgroundColor: Color.fromARGB(255, 206, 14, 104),
-              radius: 50,
-              child: CircleAvatar(
-                radius: 40,
-                backgroundImage: AssetImage('assets/whatsapp.png'),
-              ),
+            SizedBox(
+              width: 5,
             ),
             CircleAvatar(
-              backgroundColor: Color.fromARGB(255, 236, 182, 4),
-              radius: 50,
+              backgroundColor: Color.fromARGB(255, 5, 156, 113),
+              radius: 45,
               child: CircleAvatar(
                 radius: 40,
-                backgroundImage: AssetImage('assets/whatsapp.png'),
+                backgroundImage: AssetImage('assets/gt.jpg'),
               ),
             ),
+            SizedBox(
+              width: 5,
+            ),
             CircleAvatar(
-              backgroundColor: Color.fromARGB(255, 234, 38, 8),
-              radius: 50,
+              backgroundColor: Color.fromARGB(255, 5, 156, 113),
+              radius: 45,
               child: CircleAvatar(
                 radius: 40,
-                backgroundImage: AssetImage('assets/whatsapp.png'),
+                backgroundImage: AssetImage('assets/Thor.jpg'),
+              ),
+            ),
+            SizedBox(
+              width: 5,
+            ),
+            CircleAvatar(
+              backgroundColor: Color.fromARGB(255, 5, 156, 113),
+              radius: 45,
+              child: CircleAvatar(
+                radius: 40,
+                backgroundImage: AssetImage('assets/avatar.jpg'),
+              ),
+            ),
+            SizedBox(
+              width: 5,
+            ),
+            CircleAvatar(
+              backgroundColor: Color.fromARGB(255, 5, 156, 113),
+              radius: 45,
+              child: CircleAvatar(
+                radius: 40,
+                backgroundImage: AssetImage('assets/lambo.jpg'),
               ),
             ),
           ]),

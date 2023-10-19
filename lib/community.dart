@@ -8,6 +8,8 @@ class ScreenCommunity extends StatefulWidget {
 }
 
 class _ScreenCommunityState extends State<ScreenCommunity> {
+  String title = 'Community page';
+  String ctopt1 = 'Settings';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,24 +19,38 @@ class _ScreenCommunityState extends State<ScreenCommunity> {
         title: Text("Community"),
         actions: [
           IconButton(onPressed: () {}, icon: Icon(Icons.camera_alt_outlined)),
-          IconButton(onPressed: () {}, icon: Icon(Icons.more_vert)),
+          PopupMenuButton(
+            itemBuilder: (context) =>
+                [PopupMenuItem(child: Text(ctopt1), value: ctopt1)],
+            onSelected: (String newValue) {
+              setState(() {
+                title = newValue;
+              });
+            },
+          )
         ],
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(
-            padding: EdgeInsets.only(left: 30, bottom: 200),
-            height: 500,
-            width: 500,
-            child: Image(image: AssetImage('assets/whatsapp.png')),
+          Image(image: AssetImage('assets/community.png')),
+          SizedBox(
+            height: 80,
           ),
-          Container(
-            padding: EdgeInsets.only(bottom: 100),
-            child: Text(
-              "Stay connected with community",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-            ),
+          Column(
+            children: [
+              Text(
+                "Stay connected with community",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Container(
+                  padding: EdgeInsets.only(bottom: 30),
+                  child: Text(
+                      " Communities bring members together in topic based groups."))
+            ],
           )
         ],
       ),
