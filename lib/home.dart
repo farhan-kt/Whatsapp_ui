@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp/calls.dart';
-import 'package:whatsapp/chats.dart';
 import 'package:whatsapp/community.dart';
 import 'package:whatsapp/update.dart';
 
@@ -45,10 +44,7 @@ class _ScreenHomeState extends State<ScreenHome> {
                   iconSize: 30,
                 ),
                 TextButton(
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => ScreenChat()));
-                  },
+                  onPressed: () {},
                   child: Text("Chats",
                       style: TextStyle(
                           color: Color.fromARGB(255, 230, 222, 222),
